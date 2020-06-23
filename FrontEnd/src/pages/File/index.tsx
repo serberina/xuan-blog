@@ -87,7 +87,6 @@ export default function index() {
   }, []);
   return (
     <div>
-      <TitleCom />
       <HeadCom />
       <Row style={{ background: '#fff', paddingTop: 20, paddingBottom: 100 }}>
         <Col xs={0} sm={0} md={0} lg={1} xl={4}></Col>
@@ -162,53 +161,6 @@ export default function index() {
                 })}
               </Timeline>
               <Divider style={{ color: '#666' }}>
-                <span
-                  style={{
-                    fontSize: 16,
-                    fontWeight: 500,
-                    color: '#000',
-                  }}
-                >
-                  <Tooltip title="https://github.com/serberina">
-                    <Icon
-                      className="hj-icon1"
-                      style={{ marginRight: 25 }}
-                      type="github"
-                      theme="filled"
-                    />
-                  </Tooltip>
-                  <Tooltip title="18584812344">
-                    <Icon
-                      className="hj-icon2"
-                      style={{ marginRight: 25 }}
-                      type="wechat"
-                      theme="filled"
-                    />
-                  </Tooltip>
-                  <Tooltip title="248833990">
-                    <Icon
-                      className="hj-icon3"
-                      style={{ marginRight: 25 }}
-                      type="qq-circle"
-                      theme="filled"
-                    />
-                  </Tooltip>
-                  <Tooltip title="https://www.yuque.com/gensan">
-                    <Icon
-                      className="hj-icon4"
-                      style={{ marginRight: 25 }}
-                      type="yuque"
-                      theme="filled"
-                    />
-                  </Tooltip>
-                  <Tooltip title="文明人不看微博">
-                    <Icon
-                      className="hj-icon5"
-                      type="weibo-circle"
-                      theme="filled"
-                    />
-                  </Tooltip>
-                </span>
               </Divider>
             </Spin>
           </div>
@@ -221,13 +173,6 @@ export default function index() {
           xl={{ span: 4, offset: 0 }}
         >
           <BarCom />
-          <div style={{ textAlign: 'center' }}>
-            <img src="../public/images/banner-spot.jpg" alt="" />
-          </div>
-          <UserCom />
-          <HotCom />
-          <TagsCom />
-          <Instagram />
         </Col>
         <Col xs={0} sm={0} md={0} lg={1} xl={4}></Col>
       </Row>

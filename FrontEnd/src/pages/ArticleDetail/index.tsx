@@ -68,7 +68,6 @@ const ArticleDetail: React.FC<ArticleDetailType> = props => {
   });
   return (
     <div>
-      <TitleCom />
       <HeadCom />
       <Row style={{ background: '#fff', paddingTop: 20, paddingBottom: 100 }}>
         <Col xs={0} sm={0} md={0} lg={1} xl={4}></Col>
@@ -131,57 +130,6 @@ const ArticleDetail: React.FC<ArticleDetailType> = props => {
                 orientation="left"
                 style={{ color: '#666', marginTop: 100 }}
               >
-                <span
-                  style={{
-                    fontSize: 16,
-                    fontWeight: 500,
-                    color: '#666',
-                  }}
-                >
-                  评论区
-                </span>
-              </Divider>
-              <div>
-                <CommentsComp {...props} />
-              </div>
-              <Divider style={{ color: '#666', marginTop: 100 }}>
-                <span
-                  style={{
-                    fontSize: 16,
-                    fontWeight: 500,
-                    color: '#000',
-                  }}
-                >
-                  <Icon
-                    className="hj-icon1"
-                    style={{ marginRight: 25 }}
-                    type="github"
-                    theme="filled"
-                  />
-                  <Icon
-                    className="hj-icon2"
-                    style={{ marginRight: 25 }}
-                    type="wechat"
-                    theme="filled"
-                  />
-                  <Icon
-                    className="hj-icon3"
-                    style={{ marginRight: 25 }}
-                    type="instagram"
-                    theme="filled"
-                  />
-                  <Icon
-                    className="hj-icon4"
-                    style={{ marginRight: 25 }}
-                    type="yuque"
-                    theme="filled"
-                  />
-                  <Icon
-                    className="hj-icon5"
-                    type="weibo-circle"
-                    theme="filled"
-                  />
-                </span>
               </Divider>
             </Spin>
           </div>
@@ -194,13 +142,6 @@ const ArticleDetail: React.FC<ArticleDetailType> = props => {
           xl={{ span: 4, offset: 0 }}
         >
           <BarCom />
-          <div style={{ textAlign: 'center' }}>
-            <img src="../public/images/02.jpg" alt="" />
-          </div>
-          <UserCom />
-          <HotCom />
-          <TagsCom />
-          <Instagram />
         </Col>
         <Col xs={0} sm={0} md={0} lg={1} xl={4}></Col>
       </Row>
