@@ -50,7 +50,7 @@ const Login: React.FC<Iprops> = props => {
 
   return (
     <div className={styles.container}>
-      <ParticlesBg type="thick" bg={true} />
+      {/* <ParticlesBg type="thick" bg={true} /> */}
       <Spin
         indicator={<Icon type="loading" style={{ fontSize: 60, color: '#fff' }} spin />}
         size="large"
