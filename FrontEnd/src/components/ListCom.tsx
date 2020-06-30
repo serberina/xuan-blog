@@ -67,20 +67,15 @@ export default function ListCom() {
               onClick={() => articleDetail(item._id)}
               hoverable={true}
               bordered={false}
-              style={{ marginBottom: 20, marginRight: 20 }}
+              style={{ marginBottom: 10, marginRight: 10 }}
             >
               <Row>
-                <Col xs={0} sm={0} md={0} lg={0} xl={8}>
-                  <LazyLoad offset={100}>
-                    <img style={{ width: '100%' }} src={item.img} alt="" />
-                  </LazyLoad>
-                </Col>
                 <Col
-                  xs={24}
-                  sm={24}
-                  md={24}
-                  lg={24}
-                  xl={16}
+                  xs={0}
+                  sm={0}
+                  md={0}
+                  lg={0}
+                  xl={24}
                   style={{ paddingLeft: 30 }}
                 >
                   <div
@@ -102,56 +97,16 @@ export default function ListCom() {
                   </div>
                   <div
                     style={{
-                      fontSize: 18,
-                      lineHeight: '28px',
+                      fontSize: 16,
+                      lineHeight: '22px',
                       color: '#666',
-                      fontWeight: 600,
+                      fontWeight: 400,
                       letterSpacing: 2,
-                      marginBottom: 10,
+                      marginBottom: 0,
                     }}
                   >
                     {item.title}
                   </div>
-                  <div style={{ marginBottom: 10, fontSize: 12 }}>
-                    <Tag color="#24c2cb">
-                      <Icon
-                        style={{ marginRight: 5, color: '#fff' }}
-                        type="eye"
-                        theme="filled"
-                      />
-                      <span>
-                        <LazyLoad offset={0}>
-                          <CountUp duration={3} start={0} end={item.view} />
-                        </LazyLoad>
-                      </span>
-                    </Tag>
-                    <Tag color="#2db7f5">
-                      <Icon
-                        style={{
-                          marginRight: 5,
-                          color: '#fff',
-                        }}
-                        type="wechat"
-                        theme="filled"
-                      />
-                      <span>
-                        <LazyLoad offset={0}>
-                          <CountUp duration={3} start={0} end={item.msg} />条
-                        </LazyLoad>
-                      </span>
-                    </Tag>
-                  </div>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: marked(item.info) }}
-                    style={{
-                      color: '#666',
-                      paddingRight: 20,
-                      lineHeight: '27px',
-                      fontSize: 14,
-                      fontWeight: 400,
-                      height: 108,
-                    }}
-                  />
                 </Col>
               </Row>
             </Card>

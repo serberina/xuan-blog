@@ -198,7 +198,7 @@ const ArticleEdit = (props: IRouteComponentProps) => {
             <Input value={type} onChange={typeChange} placeholder="文章类型" />
           </Col>
         </Row>
-        <Row style={{ marginBottom: 20 }}>
+        {/* <Row style={{ marginBottom: 20 }}>
           <Col span={8}>
             <p style={{ marginBottom: 5 }}>上传封面 :</p>
             <Upload
@@ -226,7 +226,7 @@ const ArticleEdit = (props: IRouteComponentProps) => {
               placeholder="文章简介"
             />
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col span={12}>
             <p style={{ marginBottom: 5 }}>文章内容 :</p>

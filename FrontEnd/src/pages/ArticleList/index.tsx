@@ -4,24 +4,10 @@
  * @date 2020/06/13
  */
 import React, { useState, useEffect } from 'react';
-import {
-  Row,
-  Col,
-  Breadcrumb,
-  List,
-  Spin,
-  Divider,
-  Icon,
-  Badge,
-  Tag,
-} from 'antd';
+import { Row, Col, Breadcrumb, List, Spin, Divider, Badge, Tag } from 'antd';
 import HeadCom from '@/components/HeadCom';
 import BarCom from '@/components/BarCom';
-import HotCom from '@/components/HotCom';
 import FooterCom from '@/components/FooterCom';
-import TitleCom from '@/components/TitleCom';
-import UserCom from '@/components/UserCom';
-import Instagram from '@/components/Instagram';
 import {
   initIndexArticleListApi,
   checkTagArticleApi,
@@ -80,6 +66,7 @@ const ArticleList: React.FC<Iprops> = props => {
   const [load, setLoad] = useState<boolean>(false);
   // { tags名字 : boolean } 是否是激活状态
   const [map, setMap] = useState<MapType>({});
+
   useEffect(() => {
     document.documentElement.scrollTop = document.body.scrollTop = 0;
     setLoad(true);
@@ -199,9 +186,7 @@ const ArticleList: React.FC<Iprops> = props => {
                   </List.Item>
                 )}
               />
-              <Divider style={{ color: '#666' }}>
-                
-              </Divider>
+              <Divider style={{ color: '#666' }}></Divider>
             </Spin>
           </div>
         </Col>

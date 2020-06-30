@@ -14,7 +14,7 @@ class ArticleController extends Controller {
   }
   async initList() {
     const { ctx } = this;
-    const result = await ctx.model.Article.find();
+    const result = await ctx.model.Article.find().sort({ date: -1 });
     ctx.body = {
       success: true,
       result,
@@ -130,7 +130,7 @@ class ArticleController extends Controller {
     hot ? hot === 'all' ? undefined : hot === 'true' ? sqlObj.hot = true : hot === 'false' ? sqlObj.hot = false : undefined : undefined;
     date ? sqlObj.date = { $gte: date[0], $lte: date[1] } : undefined;
     editDate ? sqlObj.editDate = { $gte: editDate[0], $lte: editDate[1] } : undefined;
-    const result = await ctx.model.Article.find(sqlObj);
+    const result = await ctx.model.Article.find(sqlObj).sort({ date: -1 });
     ctx.body = {
       success: true,
       result,

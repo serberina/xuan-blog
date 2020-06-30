@@ -30,7 +30,7 @@ export default function TagsCom() {
         background: '#fff',
         borderRadius: 10,
         textAlign: 'center',
-        marginTop: 40,
+        marginTop: 0,
       }}
     >
       <div style={{ padding: '0px 40px 0px 40px', marginBottom: 30 }}>

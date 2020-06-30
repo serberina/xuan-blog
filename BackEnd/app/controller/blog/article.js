@@ -1,21 +1,21 @@
-'use strict';
+"use strict";
 
-const { Controller } = require('egg');
+const { Controller } = require("egg");
 
 class ArticleController extends Controller {
   async initIndex() {
     const { ctx } = this;
-    const result = await ctx.model.Article.find();
-    result.forEach(async item => {
+    const result = await ctx.model.Article.find().sort({ date: -1 });
+    result.forEach(async (item) => {
       const len = (await ctx.model.Message.find({ type: item._id })).length;
       await ctx.model.Article.update({ _id: item._id }, { msg: len });
     });
-    const res = await ctx.model.Article.find();
+    const res = await ctx.model.Article.find().sort({ date: -1 });
     const map = {};
-    res.forEach(item => {
+    res.forEach((item) => {
       map[item.type] = 0;
     });
-    res.forEach(count => {
+    res.forEach((count) => {
       map[count.type] += 1;
     });
     ctx.body = {
@@ -74,14 +74,16 @@ class ArticleController extends Controller {
   }
   async checkTagArticle() {
     const { ctx } = this;
-    if (ctx.request.body.type === 'All') {
-      const result = await ctx.model.Article.find();
+    if (ctx.request.body.type === "All") {
+      const result = await ctx.model.Article.find().sort({ date: -1 });
       ctx.body = {
         result,
         success: true,
       };
     } else {
-      const result = await ctx.model.Article.find(ctx.request.body);
+      const result = await ctx.model.Article.find(ctx.request.body).sort({
+        date: -1,
+      });
       ctx.body = {
         result,
         success: true,

@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { Row, Col, Menu, Icon, Input, Affix, Drawer, Tooltip } from 'antd';
 import { Link } from 'umi';
 import './index.less';
+import { LOGINLOCALPROD } from '@/utils/constants';
 import BarCom from './BarCom';
 import UserCom from './UserCom';
 import HotCom from './HotCom';
@@ -24,6 +25,11 @@ const HeadCom: React.FC<Iprops> = props => {
     setMenuKeys(e.key);
   };
   const [visible, setVisible] = useState(false);
+  
+  const GoAdmin = () => {
+    window.open(LOGINLOCALPROD, '_blank');
+  };
+
   return (
     <div>
       <Drawer
@@ -51,7 +57,7 @@ const HeadCom: React.FC<Iprops> = props => {
           background: '#fff',
           borderTop: '1px solid #e8e8e8',
           borderBottom: '1px solid #e8e8e8',
-          height: 100,
+          height: 60,
         }}
       >
         <Col xs={0} sm={0} md={1} lg={2} xl={5}></Col>
@@ -61,12 +67,12 @@ const HeadCom: React.FC<Iprops> = props => {
             mode="horizontal"
             onClick={handleChange}
             selectedKeys={menuKeys}
-            style={{ borderBottom: 'none', height: 60, textAlign: 'right' }}
+            style={{ borderBottom: 'none', height: 30, textAlign: 'right' }}
           >
             <Menu.Item
               style={{
                 borderBottom: 'none',
-                lineHeight: '100px',
+                lineHeight: '50px',
                 textAlign: 'center',
               }}
               key="index"
@@ -83,7 +89,7 @@ const HeadCom: React.FC<Iprops> = props => {
             <Menu.Item
               style={{
                 borderBottom: 'none',
-                lineHeight: '100px',
+                lineHeight: '50px',
                 textAlign: 'center',
               }}
               key="message"
@@ -97,7 +103,7 @@ const HeadCom: React.FC<Iprops> = props => {
             <Menu.Item
               style={{
                 borderBottom: 'none',
-                lineHeight: '100px',
+                lineHeight: '50px',
                 textAlign: 'center',
               }}
               key="article"
@@ -108,20 +114,18 @@ const HeadCom: React.FC<Iprops> = props => {
                 </span>
               </Link>
             </Menu.Item>
-            {/* <Menu.Item
+            <Menu.Item
               style={{
                 borderBottom: 'none',
-                lineHeight: '100px',
+                lineHeight: '50px',
                 textAlign: 'center',
               }}
-              key="message"
+              key="article"
             >
-              <Link to="/message" style={{ color: '#000', width: '100%' }}>
-                <span id="hj-menu2" style={{ fontSize: '16px' }}>
-                  关&nbsp;于
-                </span>
-              </Link>
-            </Menu.Item> */}
+              <span id="hj-menu2" style={{ fontSize: '16px' }} onClick={() => GoAdmin()}>
+                  管&nbsp;理
+              </span>
+            </Menu.Item>
           </Menu>
         </Col>
         <Col xs={0} sm={1} md={1} lg={0} xl={0}>

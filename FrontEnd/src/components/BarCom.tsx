@@ -8,7 +8,7 @@ export default function BarCom() {
         <Divider style={{ color: '#666' }}>ABOUT ME</Divider>
       </Col>
       <Avatar
-        src="../public/images/02.jpg"
+        src={require("../public/images/02.jpg")}
         style={{ width: '60%', height: '60%' }}
       />
       <div
@@ -16,14 +16,14 @@ export default function BarCom() {
           color: '#666',
           fontSize: 12,
           padding: '0 50px',
-          //marginTop: 20,
+          marginTop: 10,
         }}
       >
         每天努力一点点
       </div>
       <div
         style={{
-          marginBottom: 50,
+          marginBottom: 20,
           color: '#666',
           fontSize: 12,
           padding: '0 50px',

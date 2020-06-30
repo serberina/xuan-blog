@@ -38,10 +38,10 @@ export const INSTAGRAM: string[] = [
 
 /**
  * @description login url
- * @dev http://localhost:8000
- * @prod http://serberina.cn
+ * @dev http://localhost:8081
+ * @prod http://123.56.94.208:8081/
  */
-export const LOGINLOCALPROD: string = 'http://localhost:8081';
+export const LOGINLOCALPROD: string = 'http://123.56.94.208:8081';
 
 /**
  * @description github oauth url

@@ -21,7 +21,7 @@ export default function TitleCom() {
           fontFamily: 'Josefin Sans',
         }}
       >
-        serberina
+        xuanxuan
       </Col>
     </Row>
   );

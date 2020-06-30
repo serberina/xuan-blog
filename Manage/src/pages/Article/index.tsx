@@ -9,17 +9,23 @@ import {
   message,
   Upload,
   Icon,
+  Select,
+  Tag,
 } from 'antd';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
 import './index.less';
+import { connect } from 'umi';
 import { uploadArticleApi } from '@/services/articleList';
+import { connectState } from '@/models/connect';
 import { Link } from 'umi';
 import { CDN, UPLOADURL } from '@/utils/constants';
 import { IRouteComponentProps } from '@/models/connect';
 
-const Article = (props: IRouteComponentProps) => {
+const Article = (props: any) => {
+  const { Option } = Select;
+
   useEffect(() => {
     const div = document.getElementById('contentdiv');
     div!.scrollTop = div!.scrollHeight;
@@ -171,8 +177,27 @@ const Article = (props: IRouteComponentProps) => {
             <p style={{ marginBottom: 5 }}>文章类型 :</p>
             <Input value={type} onChange={typeChange} placeholder="文章类型" />
           </Col>
+          <Col span={8} style={{paddingTop: 30, paddingLeft: 20}}>
+            {props.typeList.map((item: string) => {
+              return item !== "全部" && (
+                <Tag
+                  style={{
+                    padding: '2px 20px',
+                    borderRadius: 0,
+                    background: '#fff',
+                    border: '1px solid #24c2cb',
+                    color: '#24c2cb',
+                    marginBottom: 12,
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => setType(item)}
+                >
+                  {item}
+                </Tag>
+              );
+            })}</Col>
         </Row>
-        <Row style={{ marginBottom: 20 }}>
+        {/* <Row style={{ marginBottom: 20 }}>
           <Col span={8}>
             <p style={{ marginBottom: 5 }}>上传封面 :</p>
             <Upload
@@ -200,7 +225,7 @@ const Article = (props: IRouteComponentProps) => {
               placeholder="文章简介"
             />
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col span={12}>
             <p style={{ marginBottom: 5 }}>文章内容 :</p>
@@ -230,4 +255,8 @@ const Article = (props: IRouteComponentProps) => {
     </Spin>
   );
 };
-export default Article;
+const mapStateToProps = ({ article }: connectState) => ({
+  typeList: article.type,
+});
+
+export default connect(mapStateToProps)(Article);
