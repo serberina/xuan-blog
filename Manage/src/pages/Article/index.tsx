@@ -106,10 +106,10 @@ const Article = (props: any) => {
     //   message.error('文章封面不可为空');
     //   return;
     // }
-    if (!info) {
-      message.error('文章简介不可为空');
-      return;
-    }
+    // if (!info) {
+    //   message.error('文章简介不可为空');
+    //   return;
+    // }
     if (!text) {
       message.error('文章内容不可为空');
       return;
