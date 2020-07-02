@@ -175,6 +175,7 @@ const ArticleEdit = (props: IRouteComponentProps) => {
               value={title}
               onChange={titleChange}
               placeholder="文章标题"
+              style={{ minWidth: 300 }}
             />
           </Col>
           <Col span={1}></Col>
@@ -195,7 +196,12 @@ const ArticleEdit = (props: IRouteComponentProps) => {
         <Row style={{ marginBottom: 20 }}>
           <Col span={8}>
             <p style={{ marginBottom: 5 }}>文章类型 :</p>
-            <Input value={type} onChange={typeChange} placeholder="文章类型" />
+            <Input
+              value={type}
+              onChange={typeChange}
+              placeholder="文章类型"
+              style={{ minWidth: 300 }}
+            />
           </Col>
         </Row>
         {/* <Row style={{ marginBottom: 20 }}>
@@ -231,7 +237,7 @@ const ArticleEdit = (props: IRouteComponentProps) => {
           <Col span={12}>
             <p style={{ marginBottom: 5 }}>文章内容 :</p>
             <Input.TextArea
-              style={{ height: 500, background: '#f8f9fa' }}
+              style={{ height: 500, background: '#f8f9fa', width: 400 }}
               value={text}
               onChange={TextChange}
               placeholder="MarkDown"
@@ -247,6 +253,7 @@ const ArticleEdit = (props: IRouteComponentProps) => {
                 height: 500,
                 padding: '5px 10px',
                 overflow: 'auto',
+                width: 400,
               }}
               dangerouslySetInnerHTML={{ __html: marked(text) }}
             ></div>

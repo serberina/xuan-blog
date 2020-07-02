@@ -10,7 +10,10 @@ interface Iprops {
 
 const Sider: React.FC<Iprops> = props => {
   return (
-    <SiderComp>
+    <SiderComp
+    breakpoint="lg"
+    collapsedWidth="0"
+    >
       <div style={{ height: '60px' }}>
         <Icon
           type="apple"
@@ -19,12 +22,13 @@ const Sider: React.FC<Iprops> = props => {
         />
         <div
           style={{
-            display: 'inline-block',
+            //display: 'inline-block',
             color: '#fff',
             fontWeight: 'bold',
             lineHeight: '60px',
             height: '60px',
           }}
+          className="header-title"
         >
           Management Systems
         </div>

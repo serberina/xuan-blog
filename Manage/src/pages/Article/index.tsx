@@ -155,6 +155,7 @@ const Article = (props: any) => {
               value={title}
               onChange={titleChange}
               placeholder="文章标题"
+              style={{ minWidth: 300 }}
             />
           </Col>
           <Col span={1}></Col>
@@ -175,27 +176,35 @@ const Article = (props: any) => {
         <Row style={{ marginBottom: 20 }}>
           <Col span={8}>
             <p style={{ marginBottom: 5 }}>文章类型 :</p>
-            <Input value={type} onChange={typeChange} placeholder="文章类型" />
+            <Input
+              value={type}
+              onChange={typeChange}
+              placeholder="文章类型"
+              style={{ minWidth: 300 }}
+            />
           </Col>
-          <Col span={8} style={{paddingTop: 30, paddingLeft: 20}}>
+          <Col span={8} style={{ paddingTop: 30, paddingLeft: 20 }}>
             {props.typeList.map((item: string) => {
-              return item !== "全部" && (
-                <Tag
-                  style={{
-                    padding: '2px 20px',
-                    borderRadius: 0,
-                    background: '#fff',
-                    border: '1px solid #24c2cb',
-                    color: '#24c2cb',
-                    marginBottom: 12,
-                    cursor: 'pointer',
-                  }}
-                  onClick={() => setType(item)}
-                >
-                  {item}
-                </Tag>
+              return (
+                item !== '全部' && (
+                  <Tag
+                    style={{
+                      padding: '2px 20px',
+                      borderRadius: 0,
+                      background: '#fff',
+                      border: '1px solid #24c2cb',
+                      color: '#24c2cb',
+                      marginBottom: 12,
+                      cursor: 'pointer',
+                    }}
+                    onClick={() => setType(item)}
+                  >
+                    {item}
+                  </Tag>
+                )
               );
-            })}</Col>
+            })}
+          </Col>
         </Row>
         {/* <Row style={{ marginBottom: 20 }}>
           <Col span={8}>
@@ -230,7 +239,7 @@ const Article = (props: any) => {
           <Col span={12}>
             <p style={{ marginBottom: 5 }}>文章内容 :</p>
             <Input.TextArea
-              style={{ height: 500, background: '#f8f9fa' }}
+              style={{ height: 500, background: '#f8f9fa', minWidth: 400 }}
               value={text}
               onChange={TextChange}
               placeholder="MarkDown"
@@ -246,6 +255,7 @@ const Article = (props: any) => {
                 height: 500,
                 padding: '5px 10px',
                 overflow: 'auto',
+                minWidth: 400,
               }}
               dangerouslySetInnerHTML={{ __html: marked(text) }}
             ></div>

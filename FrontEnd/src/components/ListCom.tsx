@@ -71,10 +71,6 @@ export default function ListCom() {
             >
               <Row>
                 <Col
-                  xs={0}
-                  sm={0}
-                  md={0}
-                  lg={0}
                   xl={24}
                   style={{ paddingLeft: 30 }}
                 >

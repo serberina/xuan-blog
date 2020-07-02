@@ -40,17 +40,24 @@ const HeadCom: React.FC<Iprops> = props => {
         visible={visible}
       >
         <BarCom />
-        <div style={{ textAlign: 'center' }}>
-          <img
-            style={{ width: '100%' }}
-            src="../public/images/banner-spot.jpg"
-            alt=""
-          />
-        </div>
-        <UserCom />
-        <HotCom />
+        <button
+          style={{
+            width: '100%',
+            borderRadius: '0',
+            background: '#fff',
+            outline: 'none',
+            border: '1px solid #24c2cb',
+            fontSize: 12,
+            padding: 9,
+            cursor: 'pointer',
+            marginBottom: 20,
+            color: '#24c2cb',
+          }}
+          onClick={() => GoAdmin()}
+        >
+          管理
+        </button>
         <TagsCom />
-        <Instagram />
       </Drawer>
       <Row
         style={{
