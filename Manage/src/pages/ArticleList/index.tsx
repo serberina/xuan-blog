@@ -11,6 +11,7 @@ import {
   Button,
   Icon,
   Tag,
+  AutoComplete,
 } from 'antd';
 import {
   articleListApi,
@@ -142,6 +143,7 @@ const ArticleList: React.FC<Iprops> = props => {
           padding: 20,
           borderRadius: 5,
           border: '1px solid #ccc',
+          minWidth: 600,
         }}
       >
         <Row>

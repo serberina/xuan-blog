@@ -20,18 +20,6 @@ const Sider: React.FC<Iprops> = props => {
           theme="filled"
           style={{ color: '#fff', fontSize: '50px', marginTop: '5px' }}
         />
-        <div
-          style={{
-            //display: 'inline-block',
-            color: '#fff',
-            fontWeight: 'bold',
-            lineHeight: '60px',
-            height: '60px',
-          }}
-          className="header-title"
-        >
-          Management Systems
-        </div>
       </div>
       <Menu defaultSelectedKeys={[props.idx]} mode="inline" theme="dark">
         <Menu.Item key="/">

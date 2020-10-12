@@ -146,21 +146,10 @@ const Article = (props: any) => {
           </Breadcrumb>
         </Row>
         <Row style={{ marginTop: 20, marginBottom: 20 }}>
-          <h1>上传文章</h1>
-        </Row>
-        <Row style={{ marginBottom: 20 }}>
-          <Col span={8}>
-            <p style={{ marginBottom: 5 }}>文章标题 :</p>
-            <Input
-              value={title}
-              onChange={titleChange}
-              placeholder="文章标题"
-              style={{ minWidth: 300 }}
-            />
+          <Col span={5}>
+            <h1>上传文章</h1>
           </Col>
-          <Col span={1}></Col>
-
-          <Col span={15} style={{ textAlign: 'right', paddingTop: 25 }}>
+          <Col span={10} style={{ textAlign: 'right' }}>
             <Button
               type="primary"
               onClick={handleSubmit}
@@ -175,13 +164,18 @@ const Article = (props: any) => {
         </Row>
         <Row style={{ marginBottom: 20 }}>
           <Col span={8}>
-            <p style={{ marginBottom: 5 }}>文章类型 :</p>
+            <p style={{ marginBottom: 5 }}>文章标题 :</p>
             <Input
-              value={type}
-              onChange={typeChange}
-              placeholder="文章类型"
-              style={{ minWidth: 300 }}
+              value={title}
+              onChange={titleChange}
+              placeholder="文章标题"
             />
+          </Col>
+        </Row>
+        <Row style={{ marginBottom: 20 }}>
+          <Col span={8}>
+            <p style={{ marginBottom: 5 }}>文章类型 :</p>
+            <Input value={type} onChange={typeChange} placeholder="文章类型" />
           </Col>
           <Col span={8} style={{ paddingTop: 30, paddingLeft: 20 }}>
             {props.typeList.map((item: string) => {
@@ -206,60 +200,29 @@ const Article = (props: any) => {
             })}
           </Col>
         </Row>
-        {/* <Row style={{ marginBottom: 20 }}>
-          <Col span={8}>
-            <p style={{ marginBottom: 5 }}>上传封面 :</p>
-            <Upload
-              name="file"
-              action={UPLOADURL}
-              headers={{
-                authorization: 'authorization-text',
-              }}
-              onChange={uploadChange}
-              beforeUpload={beforeUpload}
-              fileList={fileList}
-            >
-              <Button>
-                <Icon type="upload" /> 上传
-              </Button>
-            </Upload>
-          </Col>
-        </Row>
-        <Row style={{ marginBottom: 20 }}>
-          <Col span={17}>
-            <p style={{ marginBottom: 5 }}>文章简介 :</p>
-            <Input.TextArea
-              value={info}
-              onChange={infoChange}
-              placeholder="文章简介"
-            />
-          </Col>
-        </Row> */}
         <Row>
-          <Col span={12}>
-            <p style={{ marginBottom: 5 }}>文章内容 :</p>
-            <Input.TextArea
-              style={{ height: 500, background: '#f8f9fa', minWidth: 400 }}
-              value={text}
-              onChange={TextChange}
-              placeholder="MarkDown"
-            />
-          </Col>
-          <Col span={12} style={{ paddingLeft: 10 }}>
-            <p style={{ marginBottom: 5 }}>MarkDown :</p>
-            <div
-              id="contentdiv"
-              style={{
-                border: '1px solid #ccc',
-                borderRadius: 5,
-                height: 500,
-                padding: '5px 10px',
-                overflow: 'auto',
-                minWidth: 400,
-              }}
-              dangerouslySetInnerHTML={{ __html: marked(text) }}
-            ></div>
-          </Col>
+          <p style={{ marginBottom: 5 }}>文章内容 :</p>
+          <Input.TextArea
+            style={{ height: 500, background: '#f8f9fa', minWidth: 200 }}
+            value={text}
+            onChange={TextChange}
+            placeholder="MarkDown"
+          />
+        </Row>
+        <Row>
+          <p style={{ marginBottom: 5 }}>MarkDown :</p>
+          <div
+            id="contentdiv"
+            style={{
+              border: '1px solid #ccc',
+              borderRadius: 5,
+              height: 500,
+              padding: '5px 10px',
+              overflow: 'auto',
+              minWidth: 200,
+            }}
+            dangerouslySetInnerHTML={{ __html: marked(text) }}
+          ></div>
         </Row>
       </div>
     </Spin>

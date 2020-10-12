@@ -55,7 +55,7 @@ const Layouts: React.FC<Iprops> = props => {
             </div>
           </Header>
         </Affix>
-        <Content style={{ background: '#f0f2f5' }}>{props.children}</Content>
+        <Content style={{ background: '#f0f2f5', overflow: 'auto' }}>{props.children}</Content>
       </Layout>
     </Layout>
   );
